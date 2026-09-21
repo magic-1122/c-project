@@ -1,0 +1,91 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Wolf
+{
+private:
+    string gender;
+    int age;
+    int hp;
+    bool alive;
+    int x, y;
+public:
+    Wolf()
+    {
+        gender = "雄或雌";
+        age = 0;
+        hp = 100;
+        alive = true;
+        x = 0;
+        y = 0;
+    }
+    Wolf(string g, int a, int h, bool s, int nx, int ny)
+    {
+        gender = g;
+        age = a;
+        hp = h;
+        alive = s;
+        x = nx;
+        y = ny;
+    }
+    void setGender(string g)
+    {
+        gender = g;
+    }
+    void setAge(int a)
+    {
+        age = a;
+    }
+    void setHp(int h)
+    {
+        hp = h;
+    }
+    void setAlive(bool s)
+    {
+        alive = s;
+    }
+    string getGender()
+    {
+        return gender;
+    }
+    int getAge()
+    {
+        return age;
+    }
+    int getHp()
+    {
+        return hp;
+    }
+    bool getAlive()
+    {
+        return alive;
+    }
+    void move(int dx, int dy)
+    {
+        x = x + dx;
+        y = y + dy;
+    }
+    void showInfo()
+    {
+        cout << "性别：" << gender << " 年龄：" << age << " 生命值：" << hp;
+        cout << " 存活状态：" << (alive ? "存活" : "死亡");
+        cout << " 当前坐标(" << x << "," << y << ")" << endl;
+    }
+};
+
+int main()
+{
+    Wolf w1;
+    w1.showInfo();
+
+    Wolf w2("雄性", 3, 85, true, 5, 5);
+    w2.showInfo();
+
+    w2.setHp(70);
+    w2.move(2, -1);
+    w2.showInfo();
+
+
+    return 0;
+}
