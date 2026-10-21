@@ -12,12 +12,12 @@ int main()
     Sheep* sheepArr[MAX_SHEEP] = { nullptr };
 
     int wolfCnt, sheepCnt, runTime;
-    std::cout << "==== é’é’è‰åŽŸç”Ÿæ€æ¨¡æ‹Ÿç³»ç»Ÿã€å®žéªŒä¸‰ï¼šç»§æ‰¿æ´¾ç”Ÿã€‘ ====\n";
-    std::cout << "è¯·è¾“å…¥åˆå§‹åŒ–ç‹¼çš„æ•°é‡ï¼š";
+    std::cout << "==== ÇàÇà²ÝÔ­ÉúÌ¬Ä£ÄâÏµÍ³¡¾ÊµÑéÈý£º¼Ì³ÐÅÉÉú¡¿ ====\n";
+    std::cout << "ÇëÊäÈë³õÊ¼»¯ÀÇµÄÊýÁ¿£º";
     std::cin >> wolfCnt;
     if (wolfCnt > MAX_WOLF) wolfCnt = MAX_WOLF;
 
-    std::cout << "è¯·è¾“å…¥åˆå§‹åŒ–ç¾Šçš„æ•°é‡ï¼š";
+    std::cout << "ÇëÊäÈë³õÊ¼»¯ÑòµÄÊýÁ¿£º";
     std::cin >> sheepCnt;
     if (sheepCnt > MAX_SHEEP) sheepCnt = MAX_SHEEP;
 
@@ -30,7 +30,7 @@ int main()
         sheepArr[i] = new Sheep();
     }
 
-    std::cout << "\n-----åˆå§‹ç”Ÿç‰©çŠ¶æ€-----\n";
+    std::cout << "\n-----³õÊ¼ÉúÎï×´Ì¬-----\n";
     for (int i = 0; i < wolfCnt; i++)
     {
         wolfArr[i]->showInfo();
@@ -40,12 +40,12 @@ int main()
         sheepArr[i]->showInfo();
     }
 
-    std::cout << "\nè¾“å…¥æ¨¡æ‹Ÿè¿è¡Œæ—¶é—´(æ—¶é—´ç‰‡è½®æ¬¡): ";
+    std::cout << "\nÊäÈëÄ£ÄâÔËÐÐÊ±¼ä(Ê±¼äÆ¬ÂÖ´Î): ";
     std::cin >> runTime;
 
     for (int t = 0; t < runTime; t++)
     {
-        std::cout << "\n--------ç¬¬ " << t + 1 << " è½®æ¨¡æ‹Ÿ--------\n";
+        std::cout << "\n--------µÚ " << t + 1 << " ÂÖÄ£Äâ--------\n";
 
         for (int w = 0; w < wolfCnt; w++)
         {
@@ -72,7 +72,7 @@ int main()
         }
     }
 
-    std::cout << "\n====æ¨¡æ‹Ÿç»“æŸï¼Œå­˜æ´»ç”Ÿç‰©åˆ—è¡¨====\n";
+    std::cout << "\n====Ä£Äâ½áÊø£¬´æ»îÉúÎïÁÐ±í====\n";
     int liveWolf = 0;
     for (int i = 0; i < wolfCnt; i++)
     {
@@ -91,7 +91,7 @@ int main()
             liveSheep++;
         }
     }
-    std::cout << "\nå­˜æ´»ç‹¼ï¼š" << liveWolf << "åªï¼Œå­˜æ´»ç¾Šï¼š" << liveSheep << "åª\n";
+    std::cout << "\n´æ»îÀÇ£º" << liveWolf << "Ö»£¬´æ»îÑò£º" << liveSheep << "Ö»\n";
 
     for (int i = 0; i < wolfCnt; i++)
     {
@@ -102,6 +102,6 @@ int main()
         delete sheepArr[i];
     }
 
-    std::cout << "\næ¨¡æ‹Ÿç»“æŸ\n";
+    std::cout << "\nÄ£Äâ½áÊø\n";
     return 0;
 }
